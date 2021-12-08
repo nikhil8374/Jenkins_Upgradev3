@@ -1,7 +1,7 @@
 job('First-maven-project-via-dsl') {
     description("first maven job generated using dsl")
     scm {
-        git(https://github.com/anshulc55/Jenkins_Upgradev3.git", 'master')
+        git("https://github.com/anshulc55/Jenkins_Upgradev3.git", 'master')
     }
     triggers {
         scm('* * * * *')

@@ -1,0 +1,16 @@
+job('First-maven-project-via-dsl') {
+    description("first maven job generated using dsl")
+    scm {
+        git(https://github.com/anshulc55/Jenkins_Upgradev3.git", 'master')
+    }
+    triggers {
+        scm('* * * * *')
+    }
+    steps {
+        maven('clean package', 'mave-samples/single-module/pom.xml')
+    }
+    publishers {
+        //archive the war file generated
+        archiveArtifacts '**/*.jar'
+    }
+    }
